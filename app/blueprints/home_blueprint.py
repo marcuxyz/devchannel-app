@@ -4,4 +4,4 @@ home = Blueprint('home', __name__)
 
 @home.route("/")
 def index():
-    return "<h1> Página principal </h1>"
+    return "<h1> Home Page </h1>"
