@@ -8,14 +8,10 @@
   <link rel="stylesheet" href="{{ url_for('static', filename='css/paper.css') }}">
 </head>
 <body>
-  <nav>
-    <ul>
-      <li>
-        <a href="">Dev Channel</a>
-      </li>
-    </ul>
-  </nav>
-
+  {% include 'shared/_navbar.html' %}
+  
   {% block content %}{% endblock %}
+  
+  {% include 'shared/_footer.html' %}
 </body>
 </html>
