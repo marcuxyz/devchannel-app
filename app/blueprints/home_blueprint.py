@@ -4,7 +4,8 @@ home = Blueprint('home', __name__)
 
 @home.route("/")
 def index():
-    return render_template('home/index.html')
+    home = 'Apenas palavras...'
+    return render_template('home/index.html', home=home)
 
 @home.route("/sobre")
 def about():
