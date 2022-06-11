@@ -7,8 +7,9 @@ authors = ["Marcus Pereira <marcus@negros.dev>"]
 [tool.poetry.dependencies]
 python = "^3.10"
 Flask = "2.1.2"
-Flask-SQLAlchemy = "^2.5.1"
-Flask-Migrate = "^3.1.0"
+Flask-SQLAlchemy = "2.5.1"
+Flask-Migrate = "3.1.0"
+dynaconf = "3.1.9"
 
 [tool.poetry.dev-dependencies]
 python-dotenv = "0.20.0"
