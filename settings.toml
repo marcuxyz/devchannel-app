@@ -7,4 +7,4 @@ EXTENSIONS = ['app.routes:init_app', 'app.extensions:init_app']
 [development]
 
 [testing]
-SQLALCHEMY_DATABASE_URI = 'sqlite:///'
+SQLALCHEMY_DATABASE_URI = 'sqlite:///:memory:'
