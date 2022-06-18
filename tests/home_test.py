@@ -1,9 +1,6 @@
 from flask import url_for
 
-from app.models import Channel
-from app.extensions import db
-
-
+from tests.factories.channel_factory import ChannelFactory
 
 def test_should_access_home_page(client):
     response = client.get(url_for("home.index"))
@@ -20,12 +17,8 @@ def test_should_access_home_page(client):
     )
 
 def test_should_view_channels(client):
-    channel = Channel(name='Marcus Pereira', url='https://youtube.com',
-    description='Um canal que fala sobre desenvolvimento web utilizando Python',
-    country='br', video='https://youtube.com', image=b'marcuspereira.jpg')
-    db.session.add(channel)
-    db.session.commit()
+    channel = ChannelFactory.create()
 
     response = client.get(url_for("home.index"))
-   
-    assert 'Marcus Pereira' in response.get_data(as_text=True)
+  
+    assert channel.name in response.get_data(as_text=True)
