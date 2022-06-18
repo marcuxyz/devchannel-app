@@ -1,10 +1,11 @@
-from flask import Flask
 from dynaconf import FlaskDynaconf
+from flask import Flask
+
 
 def create_app():
-  app = Flask(__name__)
-  FlaskDynaconf(app, extensions_list=True)
+    app = Flask(__name__)
+    FlaskDynaconf(app, extensions_list=True)
 
-  from app.models import Channel
+    from app.models import Channel
 
-  return app
+    return app

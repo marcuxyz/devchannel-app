@@ -1,5 +1,6 @@
 from app.extensions import db
 
+
 class Channel(db.Model):
     __tablename__ = "channels"
 
