@@ -1,6 +1,7 @@
 from flask import url_for
 
 from tests.factories.channel_factory import ChannelFactory
+from tests.factories.language_factory import LanguageFactory
 
 def test_should_access_home_page(client):
     response = client.get(url_for("home.index"))
@@ -17,8 +18,9 @@ def test_should_access_home_page(client):
     )
 
 def test_should_view_channels(client):
-    channel = ChannelFactory.create()
+    language = LanguageFactory.create(name='Javascript')
+    channel = ChannelFactory.create(language=language)
 
     response = client.get(url_for("home.index"))
-  
+
     assert channel.name in response.get_data(as_text=True)
